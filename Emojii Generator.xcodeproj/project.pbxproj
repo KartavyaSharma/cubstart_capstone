@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51BA42B329F74FED004E73A4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA42B229F74FED004E73A4 /* ColorExtension.swift */; };
 		6C0D363929F5F51E00F10389 /* Emojii_GeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */; };
-		6C0D363B29F5F51E00F10389 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0D363A29F5F51E00F10389 /* ContentView.swift */; };
 		6C0D363D29F5F51F00F10389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C0D363C29F5F51F00F10389 /* Assets.xcassets */; };
 		6C0D364029F5F51F00F10389 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C0D363F29F5F51F00F10389 /* Preview Assets.xcassets */; };
 		6C0D364A29F5F52000F10389 /* Emojii_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0D364929F5F52000F10389 /* Emojii_GeneratorTests.swift */; };
@@ -36,9 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51BA42B229F74FED004E73A4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		6C0D363529F5F51E00F10389 /* Emojii Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emojii Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojii_GeneratorApp.swift; sourceTree = "<group>"; };
-		6C0D363A29F5F51E00F10389 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6C0D363C29F5F51F00F10389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C0D363F29F5F51F00F10389 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6C0D364529F5F52000F10389 /* Emojii GeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Emojii GeneratorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */,
-				6C0D363A29F5F51E00F10389 /* ContentView.swift */,
 				6C0D366229F603AA00F10389 /* startupPage.swift */,
+				51BA42B229F74FED004E73A4 /* ColorExtension.swift */,
 				6C0D366429F62B0B00F10389 /* Files.swift */,
 				6C0D363C29F5F51F00F10389 /* Assets.xcassets */,
 				6C0D363E29F5F51F00F10389 /* Preview Content */,
@@ -263,10 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C0D363B29F5F51E00F10389 /* ContentView.swift in Sources */,
 				6C0D366529F62B0B00F10389 /* Files.swift in Sources */,
 				6C0D366329F603AA00F10389 /* startupPage.swift in Sources */,
 				6C0D363929F5F51E00F10389 /* Emojii_GeneratorApp.swift in Sources */,
+				51BA42B329F74FED004E73A4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
