@@ -80,16 +80,27 @@ struct Files: View {
                 ScrollView {
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 20) {
                         ForEach(filteredTiles(), id: \.id) { tile in
-                            TileView(title: tile.title)
-                        }
+                            TileView(title: tile.title) {
+                                    deleteTile(tile: tile)
+                            }                        }
                         Button(action: addTile) {
-                            VStack {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.white, lineWidth: 2)
-                                    .frame(width: 150, height: 150)
+                            VStack(spacing: 0) {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 150, height: 150)
+                                        .cornerRadius(12)
+                                        .padding(.top, 35)
+                                    
+                                    Text("Add New")
+                                        .foregroundColor(.black)
+                                        .bold()
+                                }
+                                    .background(Color(hex: "#3C91E6", alpha: 0))
+                                    .cornerRadius(12)
                                 Text("+")
-                                    .font(.system(size: 48, weight: .bold))
-                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 35, weight: .bold))
+                                    .foregroundColor(Color.black)
                             }
                         }
                     }
@@ -112,6 +123,12 @@ struct Files: View {
     private func addTile() {
         tiles.append(Tile(title: "Tile \(tiles.count + 1)"))
     }
+    
+    func deleteTile(tile: Tile) {
+        if let index = tiles.firstIndex(where: { $0.id == tile.id }) {
+            tiles.remove(at: index)
+        }
+    }
 }
 
 struct Tile: Identifiable {
@@ -121,14 +138,37 @@ struct Tile: Identifiable {
 
 struct TileView: View {
     let title: String
+    let onDelete: () -> Void
+    @State private var isLongPressed = false
 
     var body: some View {
-        VStack {
+        ZStack(alignment: .topLeading) {
             Rectangle()
                 .fill(Color.white)
                 .frame(width: 150, height: 150)
                 .cornerRadius(12)
-            Text(title)
+                .padding(.top, 5)
+                .onLongPressGesture {
+                    isLongPressed.toggle()
+                }
+                .gesture(TapGesture(count: 2).onEnded({
+                    isLongPressed = false
+                }))
+            ZStack(alignment: .center) {
+                Text(title)
+                    .foregroundColor(.black)
+                    .bold()
+                    .padding()
+            }
+
+            if isLongPressed {
+                Button(action: onDelete) {
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(.red)
+                        .padding(EdgeInsets(top: 0, leading: -3, bottom: 0, trailing: 0))
+                }
+            }
         }
+        .cornerRadius(12)
     }
 }
