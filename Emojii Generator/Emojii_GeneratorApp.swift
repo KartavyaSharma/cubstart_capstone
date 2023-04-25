@@ -11,8 +11,7 @@ import SwiftUI
 struct Emojii_GeneratorApp: App {
     var body: some Scene {
         WindowGroup {
-            //startupPage()
-            Files()
+            startupPage()
         }
     }
 }

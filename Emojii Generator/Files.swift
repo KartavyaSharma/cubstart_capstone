@@ -54,7 +54,7 @@ struct SearchBar: View {
 struct Files: View {
     @State private var searchText: String = ""
     @State private var tiles: [Tile] = []
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         NavigationView {

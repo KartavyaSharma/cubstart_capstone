@@ -9,31 +9,41 @@ import SwiftUI
 
 struct startupPage: View {
     var body: some View {
-        VStack{
-            Divider()
-            Spacer()
-            Text("Welcome!")
-                .font(.largeTitle)
-                .frame(width: 300,height: 79)
-                .foregroundColor(.black)
-            Spacer()
-            Button("Sign In"){}
+        NavigationView {
+            VStack{
+                Divider()
+                Spacer()
+                Text("Welcome!")
+                    .font(.largeTitle)
+                    .frame(width: 300,height: 79)
+                    .foregroundColor(.black)
+                Spacer()
+                Button(action: {}){
+                    Text("Sign In")
+                }
                 .font(.headline)
                 .frame(width: 258, height: 75)
                 .foregroundColor(Color.black)
                 .background(Color(UIColor(red: CGFloat(0x0B) / 255, green: CGFloat(0xC4) / 255, blue: CGFloat(0xFF) / 255, alpha: 1)))
-            Spacer()
-                .frame(width: 300, height: 50)
-            Button("Sign Up"){}
-                .font(.headline)
-                .frame(width: 258, height: 75)
-                .foregroundColor(Color.black)
-                .background(Color(UIColor(red: CGFloat(0x0B) / 255, green: CGFloat(0xC4) / 255, blue: CGFloat(0xFF) / 255, alpha: 1)))
-            Spacer()
-            Button("Continue Without Sign In >"){}
-            Spacer()
+                Spacer()
+                    .frame(width: 300, height: 50)
+                Button("Sign Up"){}
+                    .font(.headline)
+                    .frame(width: 258, height: 75)
+                    .foregroundColor(Color.black)
+                    .background(Color(UIColor(red: CGFloat(0x0B) / 255, green: CGFloat(0xC4) / 255, blue: CGFloat(0xFF) / 255, alpha: 1)))
+                Spacer()
+                Button(action: {}){
+                    NavigationLink(destination: Files()) {
+                        Text("Continue Without Sign In")
+                            .foregroundColor(Color.blue)
+                            .navigationBarHidden(true)
+                    }
+                }
+                Spacer()
+            }
+            .background(Color(UIColor(red: CGFloat(0xf3) / 255, green: CGFloat(0xe1) / 255, blue: CGFloat(0xa1) / 255, alpha: 0.625)))
         }
-        .background(Color(UIColor(red: CGFloat(0xf3) / 255, green: CGFloat(0xe1) / 255, blue: CGFloat(0xa1) / 255, alpha: 0.625)))
     }
 }
 
