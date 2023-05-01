@@ -143,32 +143,34 @@ struct TileView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Rectangle()
-                .fill(Color.white)
-                .frame(width: 150, height: 150)
-                .cornerRadius(12)
-                .padding(.top, 5)
-                .onLongPressGesture {
-                    isLongPressed.toggle()
+            NavigationLink(destination: GridView()){
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: 150, height: 150)
+                    .cornerRadius(12)
+                    .padding(.top, 5)
+                    .onLongPressGesture {
+                        isLongPressed.toggle()
+                    }
+                    .gesture(TapGesture(count: 2).onEnded({
+                        isLongPressed = false
+                    }))
+                ZStack(alignment: .center) {
+                    Text(title)
+                        .foregroundColor(.black)
+                        .bold()
+                        .padding()
                 }
-                .gesture(TapGesture(count: 2).onEnded({
-                    isLongPressed = false
-                }))
-            ZStack(alignment: .center) {
-                Text(title)
-                    .foregroundColor(.black)
-                    .bold()
-                    .padding()
-            }
 
-            if isLongPressed {
-                Button(action: onDelete) {
-                    Image(systemName: "xmark.circle")
-                        .foregroundColor(.red)
-                        .padding(EdgeInsets(top: 0, leading: -3, bottom: 0, trailing: 0))
+                if isLongPressed {
+                    Button(action: onDelete) {
+                        Image(systemName: "xmark.circle")
+                            .foregroundColor(.red)
+                            .padding(EdgeInsets(top: 0, leading: -3, bottom: 0, trailing: 0))
+                    }
                 }
             }
-        }
-        .cornerRadius(12)
+            .cornerRadius(12)
+            }
     }
 }
