@@ -9,8 +9,8 @@ import AuthRoutes from './routes/auth/auth_routes';
 import { Exception } from './utils/errors/exception'
 import { Utils } from './utils/server_utils'
 import { Db } from './utils/database/db';
-import { Auth } from './rmembr/auth/auth_engine';
-import User from './rmembr/user/user';
+import { Auth } from './emoji/auth/auth_engine';
+import User from './emoji/user/user';
 
 
 export default class App {

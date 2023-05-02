@@ -2,10 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for Emojie Generator",
-  "main": "index.js",
+  "main": "src/server.ts",
   "repository": "https://github.com/KartavyaSharma/cubstart_capstone",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc --project ./",
+    "build:prod": "npm run build && npm run start:prod",
+    "start:dev": "cross-env NODE_ENV=development nodemon ./src/server.ts",
+    "start:prod": "cross-env NODE_ENV=production node dist/server.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",

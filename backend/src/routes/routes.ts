@@ -3,8 +3,8 @@ import bodyParser from 'body-parser';
 import { getMiddleware } from './middleware/middleware';
 
 /**
- * Parent class representing routes for any service on the
- * rmember server.
+ * Parent class representing routes for any service on the 
+ * server.
  */
 
 export abstract class Routes {
@@ -51,7 +51,6 @@ export abstract class Routes {
 
     /**
      * Adds cascading to routes. Allows routes like
-     * /planner/course/:courseId/sections/:sectionId.
      */
     protected nestRoutes(nestRoutes: Routes, morePath = ""): void {
         this._routes.use(
