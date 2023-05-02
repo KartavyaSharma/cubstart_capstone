@@ -24,3 +24,11 @@ export const JLoginRequest: ObjectSchema = Joi.object<req_mods.ILoginRequest>(
     }
 );
 /** ========================== */
+
+/** Emoji */
+export const JCreateEmojiRequest: ObjectSchema = Joi.object<req_mods.ICreateEmojiRequest>(
+    {
+        emoji: Joi.array().items(Joi.array().items(Joi.string())).required(),
+        name: Joi.string().required(),
+    }
+);

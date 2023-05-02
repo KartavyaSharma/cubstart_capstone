@@ -21,3 +21,10 @@ export interface ILoginResponse {
     token: string;
 }
 /** ========================== */
+
+/** ========== Emoji ========== */
+// POST
+export interface ICreateEmojiResponse {
+    emoji: string[][];
+    name: string;
+}

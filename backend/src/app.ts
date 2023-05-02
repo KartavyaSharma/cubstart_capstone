@@ -11,6 +11,7 @@ import { Utils } from './utils/server_utils'
 import { Db } from './utils/database/db';
 import { Auth } from './emoji/auth/auth_engine';
 import User from './emoji/user/user';
+import EmojiRoutes from './routes/emoji/routes';
 
 
 export default class App {
@@ -54,7 +55,7 @@ export default class App {
     /** Setup routes on this._server. */
     routes(): void {
         Utils.addRoute(this._server, new AuthRoutes());
-        // Utils.addRoute(this._server, new PlannerRoutes(), Auth.authMid, User.setUser);
+        Utils.addRoute(this._server, new EmojiRoutes, Auth.authMid, User.setUser)
     }
 
     /** Setup middlware functions on this._server. */

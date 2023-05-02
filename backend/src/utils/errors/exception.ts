@@ -37,6 +37,7 @@ export class Exception extends Error {
             `Path: ${req.path}`, '\n',
             `Error occured: ${err.message}`, '\n',
         ]
+        console.log(err)
         console.log(errorOutput.join(""));
         if (err instanceof Exception) {
             console.log(`Error is known.\nMeta: ${err.meta}`)

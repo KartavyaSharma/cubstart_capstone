@@ -13,6 +13,7 @@ struct SignupView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var signupStatus: SignupStatus = .none
+    @State private var shouldLogin = false
     
     enum SignupStatus {
         case none, success, failure
@@ -60,6 +61,8 @@ struct SignupView: View {
                     Text("Signup successful")
                         .foregroundColor(.green)
                         .padding(.top)
+                    NavigationLink("", destination:Files(), isActive: $shouldLogin)
+                                    .opacity(0)
                 } else if signupStatus == .failure {
                     Text("Signup failed")
                         .foregroundColor(.red)
@@ -102,6 +105,7 @@ struct SignupView: View {
                 DispatchQueue.main.async {
                     if httpResponse.statusCode == 200 {
                         self.signupStatus = .success
+                        shouldLogin = true
                     } else {
                         self.signupStatus = .failure
                     }
@@ -111,8 +115,13 @@ struct SignupView: View {
             }
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("JSON: \(json)")
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let payload = json["payload"] as? [String: Any],
+                       let token = payload["token"] as? String {
+                        saveToken(token: token)
+                    } else {
+                        print("Error: Unable to parse token from JSON")
+                    }
                 } catch {
                     print("Error: \(error)")
                 }

@@ -17,3 +17,9 @@ export interface ILoginRequest {
     password: string;
 }
 /** ========================== */
+
+/** Emoji */
+export interface ICreateEmojiRequest {
+    emoji: string[][];
+    name: string;
+}

@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var loginStatus: LoginStatus = .none
+    @State private var shouldLogin = false
 
     enum LoginStatus {
         case none, success, failure
@@ -52,6 +53,8 @@ struct LoginView: View {
                 Text("Login successful")
                     .foregroundColor(.green)
                     .padding(.top)
+                NavigationLink("", destination:Files(), isActive: $shouldLogin)
+                                    .opacity(0)
             } else if loginStatus == .failure {
                 Text("Login failed")
                     .foregroundColor(.red)
@@ -94,15 +97,22 @@ struct LoginView: View {
                 DispatchQueue.main.async {
                     if httpResponse.statusCode == 200 {
                         self.loginStatus = .success
+                        shouldLogin = true
                     } else {
                         self.loginStatus = .failure
                     }
                 }
             }
-
+            
+            
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print("JSON: \(json)")
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let payload = json["payload"] as? [String: Any],
+                   let token = payload["token"] as? String {
+                    saveToken(token: token)
+                } else {
+                    print("Error: Unable to parse token from JSON")
+                }
             } catch {
                 print("Error: \(error)")
             }
@@ -110,6 +120,11 @@ struct LoginView: View {
 
         task.resume()
     }
+}
+
+func saveToken(token: String) {
+    print(token)
+    UserDefaults.standard.set(token, forKey: "authToken")
 }
 
 struct ContentView_Previews: PreviewProvider {
