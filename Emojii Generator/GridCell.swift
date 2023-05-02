@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct GridCell: View {
-    @Binding var character: Character
+    @Binding var character: String
     
     var body: some View {
-        Text(String(character))
+        Text(character)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .border(Color.black, width: 1)
     }
