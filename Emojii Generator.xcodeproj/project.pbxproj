@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51245E6C2A003239005E8923 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51245E6B2A003238005E8923 /* GridView.swift */; };
 		51245E702A008081005E8923 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51245E6F2A008081005E8923 /* GridCell.swift */; };
+		51245E722A009F33005E8923 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51245E712A009F33005E8923 /* LoginView.swift */; };
+		51245E742A00A907005E8923 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51245E732A00A907005E8923 /* SignupView.swift */; };
 		51BA42B329F74FED004E73A4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA42B229F74FED004E73A4 /* ColorExtension.swift */; };
 		6C0D363929F5F51E00F10389 /* Emojii_GeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */; };
 		6C0D363D29F5F51F00F10389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C0D363C29F5F51F00F10389 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		51245E6B2A003238005E8923 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		51245E6F2A008081005E8923 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		51245E712A009F33005E8923 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		51245E732A00A907005E8923 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		51BA42B229F74FED004E73A4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		6C0D363529F5F51E00F10389 /* Emojii Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emojii Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emojii_GeneratorApp.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				51245E6F2A008081005E8923 /* GridCell.swift */,
 				6C0D363829F5F51E00F10389 /* Emojii_GeneratorApp.swift */,
 				6C0D366229F603AA00F10389 /* startupPage.swift */,
+				51245E712A009F33005E8923 /* LoginView.swift */,
+				51245E732A00A907005E8923 /* SignupView.swift */,
 				51BA42B229F74FED004E73A4 /* ColorExtension.swift */,
 				6C0D366429F62B0B00F10389 /* Files.swift */,
 				51245E6B2A003238005E8923 /* GridView.swift */,
@@ -270,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C0D366529F62B0B00F10389 /* Files.swift in Sources */,
+				51245E722A009F33005E8923 /* LoginView.swift in Sources */,
 				6C0D366329F603AA00F10389 /* startupPage.swift in Sources */,
 				6C0D363929F5F51E00F10389 /* Emojii_GeneratorApp.swift in Sources */,
+				51245E742A00A907005E8923 /* SignupView.swift in Sources */,
 				51245E702A008081005E8923 /* GridCell.swift in Sources */,
 				51245E6C2A003239005E8923 /* GridView.swift in Sources */,
 				51BA42B329F74FED004E73A4 /* ColorExtension.swift in Sources */,

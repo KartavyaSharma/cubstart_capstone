@@ -19,7 +19,9 @@ struct startupPage: View {
                     .foregroundColor(.black)
                 Spacer()
                 Button(action: {}){
-                    Text("Sign In")
+                    NavigationLink(destination: LoginView()) {
+                        Text("Sign In")
+                    }
                 }
                 .font(.headline)
                 .frame(width: 258, height: 75)
@@ -27,7 +29,11 @@ struct startupPage: View {
                 .background(Color(UIColor(red: CGFloat(0x0B) / 255, green: CGFloat(0xC4) / 255, blue: CGFloat(0xFF) / 255, alpha: 1)))
                 Spacer()
                     .frame(width: 300, height: 50)
-                Button("Sign Up"){}
+                Button(action: {}){
+                    NavigationLink(destination: SignupView()) {
+                        Text("Sign Up")
+                    }
+                }
                     .font(.headline)
                     .frame(width: 258, height: 75)
                     .foregroundColor(Color.black)

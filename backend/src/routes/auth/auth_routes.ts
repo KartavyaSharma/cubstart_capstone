@@ -51,7 +51,7 @@ export default class AuthRoutes extends Routes {
         /**
         * Adds a route for loggin in an existing user. Route is at /login.
         */
-        this._routes.get(`/login`, async (req: Request, res: Response, next: NextFunction) => {
+        this._routes.post(`/login`, async (req: Request, res: Response, next: NextFunction) => {
             let loginReq: ILoginRequest;
             let user: User;
             try {
