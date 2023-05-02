@@ -1,0 +1,9 @@
+{
+    "dbConfig": {
+        "uri": "MONGO_URI",
+        "testUri": "TEST_MONGO_URI"
+    },
+    "serverConfig": {
+        "port": "PORT"
+    }
+}
